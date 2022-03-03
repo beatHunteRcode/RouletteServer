@@ -11,7 +11,7 @@ namespace RouletteServer.Protocol
         public const int TEMP_BUFFER_SIZE = 512;
         public const byte HEADER_SIZE = 3;
         public const int SLEEP_TIME_MS = 100;
-
+		public const byte ENCODING_SIZE = 2;
         public const string SERVER_NAME = "Server";
 
 		public const byte SIZE_FIELD_LENGTH = 3;
@@ -43,7 +43,7 @@ namespace RouletteServer.Protocol
             return DateTime.Now.ToString("HH:mm");
         }
 
-		private static byte[] GetMessageLength(int length)
+		public static byte[] GetMessageLength(int length)
 		{
 			int _base = byte.MaxValue + 1;
 			byte[] result = new byte[SIZE_FIELD_LENGTH];

@@ -21,7 +21,7 @@ namespace RouletteServer.Protocol.Messages
         }
         public override byte[] GetBytes()
         {
-            throw new NotImplementedException();
+            return new byte[] { (byte)MessageType };
         }
     }
 }

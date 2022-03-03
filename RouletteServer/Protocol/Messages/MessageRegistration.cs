@@ -22,13 +22,14 @@ namespace RouletteServer.Protocol.Messages
         {
             MessageType = (MessageType)bytes[0];
             UserType = (UserType)bytes[1];
-            UsernameLength = bytes[2];
+            UsernameLength = (byte)(bytes[2] * Utilities.ENCODING_SIZE);
             UsernameArr = new byte[UsernameLength];
             Array.Copy(bytes, 3, UsernameArr, 0, UsernameLength);
-            Username = Encoding.UTF32.GetString(UsernameArr);
-            PasswordLength = bytes[3 + UsernameLength];
+            Username = Encoding.Unicode.GetString(UsernameArr);
+            PasswordLength = (byte)(bytes[3 + UsernameLength] * Utilities.ENCODING_SIZE);
+            PasswordArr = new byte[PasswordLength];
             Array.Copy(bytes, 3 + UsernameLength + 1, PasswordArr, 0, PasswordLength);
-            Password = Encoding.UTF32.GetString(PasswordArr);
+            Password = Encoding.Unicode.GetString(PasswordArr);
         }
 
         public override byte[] GetBytes()

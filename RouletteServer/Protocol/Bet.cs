@@ -33,11 +33,12 @@ namespace RouletteServer.Protocol
 
         public byte[] GetBytes()
         {
-            byte[] betTypeBytes = new byte[] { (byte)BetType };
-            byte[] numberBytes = new byte[] { Number };
+            //byte[] betTypeBytes = new byte[] { (byte)BetType };
+            //byte[] numberBytes = new byte[] { Number };
             byte[] sumBytes = Utilities.convertShortToByteArray(Sum);
 
-            return betTypeBytes.Concat(numberBytes).Concat(sumBytes).ToArray();
+            //return betTypeBytes.Concat(numberBytes).Concat(sumBytes).ToArray();
+            return sumBytes;
         }
     }
 }

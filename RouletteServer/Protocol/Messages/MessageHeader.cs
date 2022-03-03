@@ -9,7 +9,6 @@ namespace RouletteServer.Protocol.Messages
     class MessageHeader : Message
     {
         public int MessageLength { get; set; }
-        public MessageType MessageType { get; set; }
 
         private byte[] MessageLengthArr = new byte[sizeof(Int32)];
 
@@ -17,12 +16,16 @@ namespace RouletteServer.Protocol.Messages
         {
             Array.Copy(bytes, 0, MessageLengthArr, 0, 4);
             MessageLength = Utilities.convertBytesArrayToInt32(MessageLengthArr);
-            MessageType = (MessageType)bytes[4];
+        }
+
+        public MessageHeader(int messageLength)
+        {
+            MessageLength = messageLength;
         }
 
         public override byte[] GetBytes()
         {
-            throw new NotImplementedException();
+            return Utilities.GetMessageLength(MessageLength);
         }
     }
 }

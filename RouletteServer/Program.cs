@@ -9,8 +9,8 @@ namespace RouletteServer
     class Program
     {
 
-        const string ip = "127.0.0.1";
-        const int port = 53;
+        const string ip = "26.236.95.61";
+        const int port = 451;
 
         static void Main(string[] args)
         {

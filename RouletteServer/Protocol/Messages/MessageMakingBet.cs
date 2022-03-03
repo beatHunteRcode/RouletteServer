@@ -19,6 +19,7 @@ namespace RouletteServer.Protocol.Messages
             Bet = new Bet(betBytes);
         }
 
+        
         public override byte[] GetBytes()
         {
             throw new NotImplementedException();

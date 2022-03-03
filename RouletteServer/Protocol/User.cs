@@ -19,8 +19,7 @@ namespace RouletteServer.Protocol
         public Thread Thread;
         public Socket Socket;
 
-        private byte[] BetArr = new byte[sizeof(short)];
-        private byte[] UsernameArr;
+        public bool isBetted = false;
 
         public User(UserType userType, String username, String password, Thread t, Socket s)
         {
@@ -42,7 +41,7 @@ namespace RouletteServer.Protocol
         {
             byte[] betBytes = Bet.GetBytes();
             byte[] usernameLengthBytes = new byte[] { UsernameLength };
-            byte[] usernameBytes = Encoding.UTF32.GetBytes(Username);
+            byte[] usernameBytes = Encoding.Unicode.GetBytes(Username);
 
             return betBytes.Concat(usernameLengthBytes).Concat(usernameBytes).ToArray();
         }
