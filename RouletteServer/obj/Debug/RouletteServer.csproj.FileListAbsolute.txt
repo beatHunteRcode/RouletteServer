@@ -1,0 +1,7 @@
+D:\Programming\С#\RouletteServer\RouletteServer\obj\Debug\RouletteServer.csproj.AssemblyReference.cache
+D:\Programming\С#\RouletteServer\RouletteServer\obj\Debug\RouletteServer.csproj.CoreCompileInputs.cache
+D:\Programming\С#\RouletteServer\RouletteServer\bin\Debug\RouletteServer.exe.config
+D:\Programming\С#\RouletteServer\RouletteServer\bin\Debug\RouletteServer.exe
+D:\Programming\С#\RouletteServer\RouletteServer\bin\Debug\RouletteServer.pdb
+D:\Programming\С#\RouletteServer\RouletteServer\obj\Debug\RouletteServer.exe
+D:\Programming\С#\RouletteServer\RouletteServer\obj\Debug\RouletteServer.pdb
